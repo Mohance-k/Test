@@ -1,0 +1,28 @@
+{{set . "title" "Login"}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      {{template "header.html" .}}
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+        <form action="" method="post">
+            A printed <br>
+            <br>
+            Username : <input type="text" name="username">
+            Password : <input type="Password" name="password">
+            <input type="submit" value={{.title}}>
+        </form>
+        {{range $name,$value := .ResultSet}}
+            {{$value}}<br>
+        {{end}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}

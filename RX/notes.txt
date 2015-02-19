@@ -1,0 +1,47 @@
+ToDo
+	Go : 
+		Map, Array, Struct, loop, condition flow, make
+	Revel :
+		Params-Controller, Request, Responce, Template, Server-Engine
+Schedule Task:
+	1. User login with DB.
+		tbl-script and auto deployment.
+	2. Master tbl with constant data for application.
+	3. Menu creation.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Package creation
+	GOPATH/GOROOT - configured upto src.
+	--> go install RX/services/manager
+	--> Install Last in First out way
+
+Function 
+	Public - name should start with Caps
+	Private - name should start with small
+
+Routes - it is important, can create dynamically.
+
+DB.Exec - no return rows
+DB.Prepare - Run multi query concurrently
+
+Fetch SELECT :
+	Table column should be lower-case in GO.
+	For fetch - using pointer. So order should be same like DB.
+		Eg : SELECT A,B,C FROM tbl
+			Scan(&a,&b,&c)
+
+SQL :
+===============================================================================================================
+ALTER TABLE public."Users" ADD FOREIGN KEY ("StatusID") references PUBLIC."UserStatuses"("UserStatusID")
+
+INSERT INTO public."UserStatuses"("StatusLabel","Description") VALUES (
+'ACTIVE','User is active'
+)
+
+select * from public."UserStatuses"
+
+INSERT INTO public."Users"("UserID","FirstName","LastName","DOB","UserName","Password",
+						   "Email","GroupID","PasswordExpiry","StatusID","CreatedDate","CreatedBy")
+			VALUES ('40E6215D-B5C6-4896-987C-F30F3678F608','Mohanrajan','Kesavan',NOW(),'Mohan',
+					'admin123','mohance.k@gmail.com','0E37DF36-F698-11E6-8DD4-CB9CED3DF976',
+					'2039-10-17 13:53:21.849681+05:30',1,now(),'40E6215D-B5C6-4896-987C-F30F3678F608'
+)
